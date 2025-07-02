@@ -8,6 +8,7 @@ import { PageWrapper } from '../components/PageWrapper';
 import { LoadingSpinner } from '../components/LoadingSpinner';
 import { ErrorMessage } from '../components/ErrorMessage';
 import { ICONS } from '../constants';
+import { HomeNavbar } from '../components/HomeNavbar';
 
 export const AdminPage: React.FC = () => {
     const { user, updateUserContext } = useAuth();
@@ -231,6 +232,8 @@ export const AdminPage: React.FC = () => {
     if (error) return <PageWrapper title="Admin"><ErrorMessage message={error}/></PageWrapper>;
 
     return (
+        <>
+        <HomeNavbar/>
         <PageWrapper title="Admin Dashboard">
             <h1 className="text-5xl font-bold mb-6 text-brand-primary">Admin Dashboard</h1>
             
@@ -411,5 +414,6 @@ export const AdminPage: React.FC = () => {
                 )}
             </div>
         </PageWrapper>
+        </>
     );
 };

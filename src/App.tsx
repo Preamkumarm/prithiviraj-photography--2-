@@ -16,6 +16,7 @@ import { LoginPage } from './pages/LoginPage';
 import { AdminPage } from './pages/AdminPage';
 
 import { AdminRoute } from './routes/AdminRoute';
+import { HomeNavbar } from './components/HomeNavbar';
 
 
 function App() {
@@ -23,7 +24,6 @@ function App() {
     <AuthProvider>
         <HashRouter>
             <div className="min-h-screen flex flex-col bg-brand-bg">
-                <Navbar />
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/about" element={<AboutPage />} />

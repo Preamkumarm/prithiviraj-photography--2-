@@ -1,4 +1,3 @@
-import React from 'react';
 import type { PortfolioCategory, Service } from './types';
 
 export const PHOTOGRAPHER_INFO = {

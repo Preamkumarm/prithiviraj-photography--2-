@@ -1,10 +1,9 @@
-
 import React, { useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 import { CONTACT_INFO, ICONS } from '../constants';
 
-export const Navbar: React.FC = () => {
+export const HomeNavbar: React.FC = () => {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
@@ -76,7 +75,7 @@ export const Navbar: React.FC = () => {
                 <button onClick={() => { handleLogout(); setIsOpen(false); }} className="w-full text-left block py-2 px-4 rounded-md text-base font-medium bg-red-600 text-white hover:bg-red-700">Logout</button>
                </>
             ) : (
-              <></>
+             <></>
             )}
           </div>
         </div>

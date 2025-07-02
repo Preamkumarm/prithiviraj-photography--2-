@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import * as api from '../services/apiService';
 import type { PortfolioCategory, Feedback } from '../types';
 import { LoadingSpinner } from '../components/LoadingSpinner';
+import { Navbar } from '../components/Navbar';
 
 export const HomePage: React.FC = () => {
     const [data, setData] = useState<{
@@ -48,6 +49,8 @@ export const HomePage: React.FC = () => {
     }, []);
 
     return (
+        <>
+        <Navbar/>
         <div className="flex-grow">
             <div className="relative h-[80vh] min-h-[500px] flex items-center justify-center text-center text-white -mt-20">
                 <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
@@ -109,5 +112,6 @@ export const HomePage: React.FC = () => {
                 </>
             )}
         </div>
+        </>
     );
 };

@@ -129,7 +129,7 @@ export const PortfolioCategoryPage: React.FC = () => {
                         <div key={photo.id} className="flex flex-col gap-2">
                             <img src={photo.url} onError={handleImageError} alt={`${categoryName} sample ${index + 1}`} className="w-full h-auto object-cover rounded-lg aspect-[4/3] shadow-lg" />
                             {user?.role === 'admin' && (
-                               <button onClick={() => handlePhotoDelete(photo.id)} className="flex items-center justify-center gap-2 self-center bg-red-600 text-white px-3 py-1 rounded-md hover:bg-red-700 text-sm transition-colors" title="Delete Photo">
+                               <button onClick={()=> handlePhotoDelete(photo.id)} className="flex items-center justify-center gap-2 self-center bg-red-600 text-white px-3 py-1 rounded-md hover:bg-red-700 text-sm transition-colors" title="Delete Photo">
                                     {ICONS.trash('h-4 w-4')}
                                     <span>Delete</span>
                                 </button>
