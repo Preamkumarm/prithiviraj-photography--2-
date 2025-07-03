@@ -14,6 +14,7 @@ export const HomePage: React.FC = () => {
     } | null>(null);
     const [isLoading, setIsLoading] = useState(true);
 
+
     useEffect(() => {
         const fetchData = async () => {
             try {

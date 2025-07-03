@@ -4,10 +4,20 @@ import { PageWrapper } from '../components/PageWrapper';
 import { PHOTOGRAPHER_INFO } from '../constants';
 import * as api from '../services/apiService';
 import { LoadingSpinner } from '../components/LoadingSpinner';
+import { assets } from '../assests/assets';
 
 export const AboutPage: React.FC = () => {
     const [intro, setIntro] = useState('');
     const [isLoading, setIsLoading] = useState(true);
+    const [currentImage, setCurrentImage] = useState(0);
+
+    useEffect(()=>{
+        const interval = setInterval(()=>{
+            setCurrentImage((prevIndex)=>(prevIndex + 1) % assets.length);
+        }, 2000);
+
+        return ()=> clearInterval(interval);
+    }, []);
 
     useEffect(() => {
         const loadContent = async () => {
@@ -28,7 +38,7 @@ export const AboutPage: React.FC = () => {
         <PageWrapper title="About">
             <div className="flex flex-col md:flex-row items-center gap-12">
                 <div className="md:w-1/3">
-                    <img src="https://picsum.photos/seed/prithiviraj/600/800" alt={PHOTOGRAPHER_INFO.name} className="rounded-lg shadow-2xl object-cover w-full h-auto" />
+                    <img src={assets[currentImage].imageSrc} alt={PHOTOGRAPHER_INFO.name} className="rounded-lg shadow-2xl object-cover w-full h-auto" />
                 </div>
                 <div className="md:w-2/3">
                     <h1 className="text-5xl font-bold text-brand-primary mb-4">{PHOTOGRAPHER_INFO.name}</h1>

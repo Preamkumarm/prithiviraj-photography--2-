@@ -13,7 +13,7 @@ import { ReviewsPage } from './pages/ReviewsPage';
 import { LoginPage } from './pages/LoginPage';
 import { AdminPage } from './pages/AdminPage';
 
-import { AdminRoute } from './routes/AdminRoute';
+// import { AdminRoute } from './routes/AdminRoute';
 
 
 function App() {

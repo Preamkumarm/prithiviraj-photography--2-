@@ -55,7 +55,7 @@ const saveData = (key: string, data: any) => sessionStorage.setItem(key, JSON.st
 // --- MOCK DATA STORE ---
 
 let mockUsers = initStorage<any[]>('mock_users', [
-    { id: 1, email: 'contact@prstudio.co.in', password: '123456', name: 'Admin', role: 'admin', phone: '9876543210', createdAt: new Date(Date.now() - 86400000 * 10).toISOString() },
+    { id: 1, email: 'prstudionkl@gmail.com', password: 'PRS@pr123', name: 'Admin', role: 'admin', phone: '9876543210', createdAt: new Date(Date.now() - 86400000 * 10).toISOString() },
     { id: 2, email: 'user@test.com', password: 'password', name: 'Test User', role: 'user', phone: '1234567890', createdAt: new Date().toISOString() },
 ]);
 let mockPortfolio = initStorage<PortfolioCategory[]>('mock_portfolio', INITIAL_PORTFOLIO_CATEGORIES);
