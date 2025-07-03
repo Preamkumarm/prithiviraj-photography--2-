@@ -1,8 +1,6 @@
-import React from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import {  Routes, Route, BrowserRouter } from 'react-router-dom';
 
 import { AuthProvider } from './context/AuthContext';
-import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 
 import { HomePage } from './pages/HomePage';
@@ -16,13 +14,12 @@ import { LoginPage } from './pages/LoginPage';
 import { AdminPage } from './pages/AdminPage';
 
 import { AdminRoute } from './routes/AdminRoute';
-import { HomeNavbar } from './components/HomeNavbar';
 
 
 function App() {
   return (
     <AuthProvider>
-        <HashRouter>
+        <BrowserRouter>
             <div className="min-h-screen flex flex-col bg-brand-bg">
                 <Routes>
                     <Route path="/" element={<HomePage />} />
@@ -37,7 +34,7 @@ function App() {
                 </Routes>
                 <Footer />
             </div>
-        </HashRouter>
+        </BrowserRouter>
     </AuthProvider>
   );
 }
