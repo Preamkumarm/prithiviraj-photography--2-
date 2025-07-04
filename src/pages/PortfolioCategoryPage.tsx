@@ -40,6 +40,8 @@ export const PortfolioCategoryPage: React.FC = () => {
         }
     }, [categoryId]);
 
+    console.log(photos);
+
     useEffect(() => {
         fetchPhotos();
     }, [fetchPhotos]);
